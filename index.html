@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MovieSPAVue</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-center">
+    <div id="app">
+        <div class="form-movie">
+            <div v-if="movie">
+                <img class="mb-4" :src="movie.Poster">
+                <h4>{{ movie.Title }} - {{ movie.Director }}</h4>
+                <p>{{ movie.Plot }}</p>
+                <p>{{ movie.Released }}</p>
+            </div>
+            <h1 v-else class="h3 mb-3 font-weight-normal">MovieSPA with VueJS</h1>
+            <input v-model="query" type="text" class="form-control mb-3" placeholder="Query">
+            <button @click="search()" class="btn btn-lg btn-primary btn-block" type="button">Search</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2019 Recep Emul</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
